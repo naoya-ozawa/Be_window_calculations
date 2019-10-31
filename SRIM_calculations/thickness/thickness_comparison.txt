@@ -1,0 +1,25 @@
+Compare:
+
+- 10_10: 10 um Be + 8 mm He (gas) + 10 um Be
+- 10_15: 10 um Be + 8 mm He (gas) + 15 um Be
+- 15_10: 15 um Be + 8 mm He (gas) + 10 um Be
+- 15_15: 15 um Be + 8 mm He (gas) + 15 um Be
+
+with 113 MeV 18^O beam
+
+PV = NRT
+
+P = 1.1 x 10^+5 Pa [= kg m^-1 s^-2]
+V = 10 m x pi*(3 mm)^2 = 0.0003 m^3
+R = 8.3 m^2 kg s^-2 K^-1 mol^-1
+T = 293 K
+
+N = PV/(RT) = 0.01 [kg*m^-1*s^-2*m^3*m^-2*kg^-1*s^2*K*mol*K^-1]
+  = 0.01 mol
+
+n = N/V = 30 mol/m^3 = 1.8 x 10^25 atoms/m^3 = 1.8 x 10^19 atoms/cm^3
+        = 3 x 10-5 mol/cm^3
+N_A = 6.0 x 10^23 atoms/mol
+m(He) = 4 g/mol
+
+rho = m(He)*n = 1.2*10^-4 g/cm^3 ~ 0.0001 g/cm^3
