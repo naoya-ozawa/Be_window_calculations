@@ -96,14 +96,14 @@ int main(int argc, char** argv){
 	printf("The measured weight of the Be (mg): ");
 	scanf("%lf", &measured_w);
 
-	double measured_w_g = measured_w * 1000.0; // measured weight of Be in g
+	double measured_w_g = measured_w / 1000.0; // measured weight of Be in g
 
 	double d_Be = Be_density();
 	printf("The density of the Be: %.2f g/cm3\n",d_Be);
 
 	double measured_t_cm = measured_w_g / (M_PI*measured_rad_cm*measured_rad_cm*d_Be); // "measured" thickness in cm
 
-	double measured_t = measured_t_cm / 10000.0; // "measured" thickeness in um
+	double measured_t = measured_t_cm * 10000.0; // "measured" thickeness in um
 
 	printf("Thickness: %3.2f um\n",measured_t);
 
