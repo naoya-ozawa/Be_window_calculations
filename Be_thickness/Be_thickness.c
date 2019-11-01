@@ -51,7 +51,6 @@ double Be_density(){
 	return density/sum;
 }
 
-
 int main(int argc, char** argv){
 
 	double product_t;
@@ -86,26 +85,39 @@ int main(int argc, char** argv){
 		exit(0);
 	}
 
+	printf("=================================\n");
+
 	double measured_d;
 	printf("The measured diameter of the Be (mm): ");
 	scanf("%lf",&measured_d);
 
+	double measured_d_err = 0.1;
+	printf("Assuming measurement error of +-%2.1f mm\n",measured_d_err);
+
 	double measured_rad_cm = 0.5 * measured_d / 10.0; // measured radius of Be in cm
+	double measured_rad_cm_err = 0.5 * measured_d_err / 10.0;
 
 	double measured_w;
 	printf("The measured weight of the Be (mg): ");
 	scanf("%lf", &measured_w);
 
+	double measured_w_err = 0.1;
+	printf("Assuming measurement error of +-%2.1f mg\n",measured_w_err);
+
 	double measured_w_g = measured_w / 1000.0; // measured weight of Be in g
+	double measured_w_g_err = measured_w_err / 1000.;
 
 	double d_Be = Be_density();
 	printf("The density of the Be: %.2f g/cm3\n",d_Be);
 
 	double measured_t_cm = measured_w_g / (M_PI*measured_rad_cm*measured_rad_cm*d_Be); // "measured" thickness in cm
+	double measured_t_cm_err = (1.0/(measured_rad_cm*measured_rad_cm)) * sqrt( measured_w_g_err*measured_w_g_err + 4.0*measured_w_g*measured_w_g*measured_rad_cm_err*measured_rad_cm_err/(measured_rad_cm*measured_rad_cm) );
 
 	double measured_t = measured_t_cm * 10000.0; // "measured" thickeness in um
+	double measured_t_err = measured_t_cm_err * 10000.0;
 
-	printf("Thickness: %3.2f um\n",measured_t);
+	printf("=================================\n");
+	printf("Thickness: %3.2f +- %3.2f um\n",measured_t,measured_t_err);
 
 	return 0;
 }
