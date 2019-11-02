@@ -111,7 +111,7 @@ int main(int argc, char** argv){
 	printf("The density of the Be: %.2f g/cm3\n",d_Be);
 
 	double measured_t_cm = measured_w_g / (M_PI*measured_rad_cm*measured_rad_cm*d_Be); // "measured" thickness in cm
-	double measured_t_cm_err = (1.0/(measured_rad_cm*measured_rad_cm)) * sqrt( measured_w_g_err*measured_w_g_err + 4.0*measured_w_g*measured_w_g*measured_rad_cm_err*measured_rad_cm_err/(measured_rad_cm*measured_rad_cm) );
+	double measured_t_cm_err = (1.0/(M_PI*measured_rad_cm*measured_rad_cm*d_Be)) * sqrt( measured_w_g_err*measured_w_g_err + 4.0*measured_w_g*measured_w_g*measured_rad_cm_err*measured_rad_cm_err/(measured_rad_cm*measured_rad_cm) );
 
 	double measured_t = measured_t_cm * 10000.0; // "measured" thickeness in um
 	double measured_t_err = measured_t_cm_err * 10000.0;
