@@ -1,0 +1,19 @@
+altering Be thickness (10um+10um OR 15um+15um) / Incident energy (109MeV OR 117MeV) / Incident angle (0deg OR 56deg)
+
+* BeWindow_20um_109MeV_0deg
+
+* BeWindow_20um_109MeV_56deg
+10 um --> 10/cos(56.3deg) = 18.03 um
+8 mm --> 8/cos(56.3deg) = 14.43 mm
+
+* BeWindow_30um_109MeV_0deg
+
+* BeWindow_30um_109MeV_56deg
+
+* BeWindow_20um_116MeV_0deg
+
+* BeWindow_20um_116MeV_56deg
+
+* BeWindow_30um_116MeV_0deg
+
+* BeWindow_30um_116MeV_56deg

@@ -20,11 +20,19 @@ int main(int argc, char** argv){
 //	filename = "./thickness/TRANSMIT_Be_Window_10um_10um.txt";
 //	filename = "./thickness/TRANSMIT_Be_Window_10um_15um.txt";
 //	filename = "./thickness/TRANSMIT_Be_Window_15um_10um.txt";
-	filename = "./thickness/TRANSMIT_Be_Window_15um_15um.txt";
+//	filename = "./thickness/TRANSMIT_Be_Window_15um_15um.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_20um_109MeV_0deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_20um_109MeV_56deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_20um_116MeV_0deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_20um_116MeV_56deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_30um_109MeV_0deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_30um_109MeV_56deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_30um_116MeV_0deg.txt";
+	filename = "./additional/TRANSMIT_BeWindow_30um_116MeV_56deg.txt";
 
 	file.open(filename.c_str());
 
-	TH1D *spectrum = new TH1D("spectrum","Energy Spectrum of Transmitted Ions (15 #mum Be + 8 mm He Gas + 15 #mum Be)",1500,90.,105.);
+	TH1D *spectrum = new TH1D("spectrum","Energy Spectrum of Transmitted {}^{18}O Ions (116 MeV beam through 15 #mum Be + 8 mm He Gas + 15 #mum Be at 56#circ)",1500,70.,85.);
 	spectrum->GetXaxis()->SetTitle("Energy (MeV)");
 	spectrum->GetYaxis()->SetTitle("Ions / 0.01 MeV");
 
@@ -90,9 +98,9 @@ int main(int argc, char** argv){
 	l_spect->SetTextAlign(12);
 	l_spect->SetTextSize(0.05);
 //	l_spect->DrawLatex(91.,250,Form("<KE> = %g #pm %g MeV",fitspect->GetParameter(1),fitspect->GetParError(1)));
-	l_spect->DrawLatex(91.,250,Form("E[KE] = %g MeV",mean));
+	l_spect->DrawLatex(71.,120,Form("E[KE] = %g MeV",mean));
 //	l_spect->DrawLatex(91.,230,Form("#Delta E = %g #pm %g MeV",fitspect->GetParameter(2),fitspect->GetParError(2)));
-	l_spect->DrawLatex(91.,230,Form("#sigma[KE] = %g MeV",stdev));
+	l_spect->DrawLatex(71.,100,Form("#sigma[KE] = %g MeV",stdev));
 
 	cout << "Fit Result:" << endl;
 	cout << "Mean = " << fitspect->GetParameter(1) << " +- " << fitspect->GetParError(1) << " MeV" << endl;
