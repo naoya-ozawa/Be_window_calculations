@@ -53,37 +53,37 @@ double Be_density(){
 
 int main(int argc, char** argv){
 
-	double product_t;
-	printf("The nominal thickness of the Be (um): ");
-	scanf("%lf",&product_t);
+//	double product_t;
+//	printf("The nominal thickness of the Be (um): ");
+//	scanf("%lf",&product_t);
 
-	double product_d;
-	printf("The nominal diameter of the Be (mm): ");
-	scanf("%lf",&product_d);
+//	double product_d;
+//	printf("The nominal diameter of the Be (mm): ");
+//	scanf("%lf",&product_d);
 
-	double thickness_nom, thickness_tol, diameter_nom, diameter_tol;
+//	double thickness_nom, thickness_tol, diameter_nom, diameter_tol;
 
-	if (product_t == 10.0){
-		thickness_nom = 10.;
-		thickness_tol = 0.005; // +5 um / -0 um
-		printf("Nominal thickness: %.3f +%.3f/-0 um\n",thickness_nom,thickness_tol);
-	}else if (product_t == 8.0){
-		thickness_nom = 8.;
-		thickness_tol = 0.005; // +5 um / -0 um
-		printf("Nominal thickness: %.3f +%.3f/-0 um\n",thickness_nom,thickness_tol);
-	}else{
-		printf("I do not have the data for that!\n");
-		exit(0);
-	}
+//	if (product_t == 10.0){
+//		thickness_nom = 10.;
+//		thickness_tol = 0.005; // +5 um / -0 um
+//		printf("Nominal thickness: %.3f +%.3f/-0 um\n",thickness_nom,thickness_tol);
+//	}else if (product_t == 8.0){
+//		thickness_nom = 8.;
+//		thickness_tol = 0.005; // +5 um / -0 um
+//		printf("Nominal thickness: %.3f +%.3f/-0 um\n",thickness_nom,thickness_tol);
+//	}else{
+//		printf("I do not have the data for that!\n");
+//		exit(0);
+//	}
 
-	if (product_d == 17.0){
-		diameter_nom = 17.;
-		diameter_tol = 0.08; // +-0.08 mm
-		printf("Nominal diameter: %.2f +-%.2f mm\n",diameter_nom,diameter_tol);
-	}else{
-		printf("I do not have the data for that!\n");
-		exit(0);
-	}
+//	if (product_d == 17.0){
+//		diameter_nom = 17.;
+//		diameter_tol = 0.08; // +-0.08 mm
+//		printf("Nominal diameter: %.2f +-%.2f mm\n",diameter_nom,diameter_tol);
+//	}else{
+//		printf("I do not have the data for that!\n");
+//		exit(0);
+//	}
 
 	printf("=================================\n");
 
@@ -91,7 +91,7 @@ int main(int argc, char** argv){
 	printf("The measured diameter of the Be (mm): ");
 	scanf("%lf",&measured_d);
 
-	double measured_d_err = 0.1;
+	double measured_d_err = 0.2;
 	printf("Assuming measurement error of +-%2.1f mm\n",measured_d_err);
 
 	double measured_rad_cm = 0.5 * measured_d / 10.0; // measured radius of Be in cm
@@ -101,7 +101,7 @@ int main(int argc, char** argv){
 	printf("The measured weight of the Be (mg): ");
 	scanf("%lf", &measured_w);
 
-	double measured_w_err = 0.1;
+	double measured_w_err = 0.2;
 	printf("Assuming measurement error of +-%2.1f mg\n",measured_w_err);
 
 	double measured_w_g = measured_w / 1000.0; // measured weight of Be in g
