@@ -28,11 +28,19 @@ int main(int argc, char** argv){
 //	filename = "./additional/TRANSMIT_BeWindow_30um_109MeV_0deg.txt";
 //	filename = "./additional/TRANSMIT_BeWindow_30um_109MeV_56deg.txt";
 //	filename = "./additional/TRANSMIT_BeWindow_30um_116MeV_0deg.txt";
-	filename = "./additional/TRANSMIT_BeWindow_30um_116MeV_56deg.txt";
+//	filename = "./additional/TRANSMIT_BeWindow_30um_116MeV_56deg.txt";
+//	filename = "./He_thickness/TRANSMIT_BeWindow_20um_113MeV_16mm.txt";
+//	filename = "./He_thickness/TRANSMIT_BeWindow_20um_113MeV_24mm.txt";
+//	filename = "./incident_energy/TRANSMIT_BeWindow_20um_122MeV.txt";
+//	filename = "./incident_energy/TRANSMIT_BeWindow_20um_126MeV.txt";
+//	filename = "./incident_energy/TRANSMIT_BeWindow_20um_130MeV.txt";
+//	filename = "./incident_energy/TRANSMIT_BeWindow_30um_126MeV.txt";
+//	filename = "./incident_energy/TRANSMIT_BeWindow_30um_122MeV.txt";
+	filename = "./incident_energy/TRANSMIT_BeWindow_30um_130MeV.txt";
 
 	file.open(filename.c_str());
 
-	TH1D *spectrum = new TH1D("spectrum","Energy Spectrum of Transmitted {}^{18}O Ions (116 MeV beam through 15 #mum Be + 8 mm He Gas + 15 #mum Be at 56#circ)",1500,70.,85.);
+	TH1D *spectrum = new TH1D("spectrum","Energy Spectrum of Transmitted {}^{18}O Ions (130 MeV beam through 15 #mum Be + 8 mm He Gas + 15 #mum Be at 0#circ)",1500,105.,120.);
 	spectrum->GetXaxis()->SetTitle("Energy (MeV)");
 	spectrum->GetYaxis()->SetTitle("Ions / 0.01 MeV");
 
@@ -98,9 +106,9 @@ int main(int argc, char** argv){
 	l_spect->SetTextAlign(12);
 	l_spect->SetTextSize(0.05);
 //	l_spect->DrawLatex(91.,250,Form("<KE> = %g #pm %g MeV",fitspect->GetParameter(1),fitspect->GetParError(1)));
-	l_spect->DrawLatex(71.,120,Form("E[KE] = %g MeV",mean));
+	l_spect->DrawLatex(106.,120,Form("E[KE] = %g MeV",mean));
 //	l_spect->DrawLatex(91.,230,Form("#Delta E = %g #pm %g MeV",fitspect->GetParameter(2),fitspect->GetParError(2)));
-	l_spect->DrawLatex(71.,100,Form("#sigma[KE] = %g MeV",stdev));
+	l_spect->DrawLatex(106.,100,Form("#sigma[KE] = %g MeV",stdev));
 
 	cout << "Fit Result:" << endl;
 	cout << "Mean = " << fitspect->GetParameter(1) << " +- " << fitspect->GetParError(1) << " MeV" << endl;
