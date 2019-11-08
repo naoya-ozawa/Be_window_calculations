@@ -119,46 +119,6 @@ int main(int argc, char** argv){
   l_model->DrawLatex(0.23,0.5,Form("C_{E0} = %3.2f #pm %3.2f MeV",C_E0,C_E0_err));
   l_model->DrawLatex(0.23,0.4,Form("C_{E1} = %3.2f #pm %3.2f MeV MeV(incident)",C_E1,C_E1_err));
 
-//  // Dependence on the total thickness of Be+He+Be (considering the angle as well)
-//  TMultiGraph *mg_thicknessdep = new TMultiGraph();
-//  mg_thicknessdep->SetTitle("Dependence on the Total Thickness of Be+He+Be;Thickness (mm);Energy Loss (MeV)");
-
-//  double net_thickness_113mev[3] = {8.020,8.025,8.030};
-//  double net_thickness_113mev_err[3] = {0.0,0.0,0.0};
-//  double energyloss_113mev[3] = {113.-99.7,113.-96.3,113.-92.9};
-//  double energyloss_113mev_err[3] = {0.2,0.2,0.2};
-//  TGraphErrors *g_net_thickness_113mev = new TGraphErrors(3,net_thickness_113mev,energyloss_113mev,net_thickness_113mev_err,energyloss_113mev_err);
-//  g_net_thickness_113mev->SetTitle("113 MeV Beam");
-//  g_net_thickness_113mev->SetMarkerColor(2);
-//  g_net_thickness_113mev->SetLineColor(2);
-
-//  double net_thickness_109mev[4] = {8.02,8.03,8.02/TMath::Cos(0.983),8.03/TMath::Cos(0.983)};
-//  double net_thickness_109mev_err[4] = {0.0,0.0,0.0,0.0};
-//  double energyloss_109mev[4] = {109.-96.,109.-89.,109.-83.9,109.-69.6};
-//  double energyloss_109mev_err[4] = {0.2,0.2,0.2,0.3};
-//  TGraphErrors *g_net_thickness_109mev = new TGraphErrors(4,net_thickness_109mev,energyloss_109mev,net_thickness_109mev_err,energyloss_109mev_err);
-//  g_net_thickness_109mev->SetTitle("109 MeV Beam");
-//  g_net_thickness_109mev->SetMarkerColor(3);
-//  g_net_thickness_109mev->SetLineColor(3);
-
-//  TF1 *f_net_thickness_109mev = new TF1("")
-
-//  double net_thickness_116mev[4] = {8.02,8.03,8.02/TMath::Cos(0.983),8.03/TMath::Cos(0.983)};
-//  double net_thickness_116mev_err[4] = {0.0,0.0,0.0,0.0};
-//  double energyloss_116mev[4] = {116.-103.4,116.-96.8,116.-92.0,116.-78.7};
-//  double energyloss_116mev_err[4] = {0.1,0.2,0.2,0.3};
-//  TGraphErrors *g_net_thickness_116mev = new TGraphErrors(4,net_thickness_116mev,energyloss_116mev,net_thickness_116mev_err,energyloss_116mev_err);
-//  g_net_thickness_116mev->SetTitle("116 MeV Beam");
-//  g_net_thickness_116mev->SetMarkerColor(4);
-//  g_net_thickness_116mev->SetLineColor(4);
-
-
-//  mg_thicknessdep->Add(g_net_thickness_113mev);
-//  mg_thicknessdep->Add(g_net_thickness_109mev);
-//  mg_thicknessdep->Add(g_net_thickness_116mev);
-//  mg_thicknessdep->Draw("ALP");
-
-//  c1->cd(4)->BuildLegend();
 
   rootapp.Run();
   c1->Update();
